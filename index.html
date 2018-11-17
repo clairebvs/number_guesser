@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <meta charset="utf-8">
+    <title>Number Guesser</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,700" rel="stylesheet">
+    <link rel="stylesheet" href="main.css">
+
+  </head>
+  <body>
+
+    <header>
+      <span class="header-title">Number</span> Guesser
+    </header>
+
+    <input class="user-number" id="userNumber"type="text" placeholder="Enter your guess">
+    <button class="user-submit">Guess</button>
+
+    <button class="user-delete" id="clearButton" onclick="document.getElementById('userNumber').value = ''">Clear</button>
+
+    <p class="message"></p>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
