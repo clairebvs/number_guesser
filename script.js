@@ -1,7 +1,7 @@
 var randomNumber = Math.floor(Math.random() * 100) + 1;
 
 $('.user-submit').on('click', function () {
-  var guessNumber = $('.user-number').val();
+  var guessNumber = Number(userNumber.value);
 
   if (parseInt(guessNumber) === randomNumber) {
     $('.last-guess').text('');
@@ -15,6 +15,10 @@ $('.user-submit').on('click', function () {
     $('.last-guess').text('Your last guess was');
     $('.message').text(guessNumber);
     $('.hi-low').text('That is too high');
+  } else if (isNaN(guessNumber)){
+    alert("Not a valid number");
+    userNumber.value = '';
+    return;
   }
 });
 
