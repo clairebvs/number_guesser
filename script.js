@@ -10,6 +10,11 @@ $('.user-submit').on('click', function () {
     $('.message').text('BOOM!');
     $('.hi-low').text('');
   }
+  else if (parseInt(guessNumber) > max || parseInt(guessNumber) < min) {
+    alert(guessNumber + " is outside of the range, choose a number between " + min + " and " + max);
+    userNumber.value = '';
+    return;
+  }
   else if (parseInt(guessNumber) < randomNumber){
     $('.last-guess').text('Your last guess was');
     $('.message').text(guessNumber);
@@ -22,11 +27,6 @@ $('.user-submit').on('click', function () {
   }
   else if (isNaN(guessNumber)){
     alert("Not a valid number");
-    userNumber.value = '';
-    return;
-  }
-  else if (parseInt(guessNumber) > max || parseInt(guessNumber) < min) {
-    alert(guessNumber + " is outside of the range, choose a number between " + min + " and " + max);
     userNumber.value = '';
     return;
   }
