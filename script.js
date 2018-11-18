@@ -20,13 +20,13 @@ $('.user-submit').on('click', function () {
     $('.message').text(guessNumber);
     $('.hi-low').text('That is too high');
   }
-  else if (parseInt(guessNumber) > max || parseInt(guessNumber) < min) {
-    alert(guessNumber + " is outside of the range, choose a number between " + min + " and " + max);
+  else if (isNaN(guessNumber)){
+    alert("Not a valid number");
     userNumber.value = '';
     return;
   }
-  else if (isNaN(guessNumber)){
-    alert("Not a valid number");
+  else if (parseInt(guessNumber) > max || parseInt(guessNumber) < min) {
+    alert(guessNumber + " is outside of the range, choose a number between " + min + " and " + max);
     userNumber.value = '';
     return;
   }
@@ -44,4 +44,13 @@ function resetGame() {
   userNumber.value = '';
 
   randomNumber = Math.floor(Math.random() * 100) + 1;
+}
+
+function disableButton() {
+  if (document.getElementById("userNumber").value === "") {
+    document.getElementById('clearButton').disabled = true;
+  }
+  else {
+    document.getElementById('clearButton').disabled = false;
+  }
 }
