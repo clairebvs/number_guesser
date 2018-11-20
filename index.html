@@ -12,13 +12,17 @@
   <body>
 
     <header>
-      <span class="header-title">Number</span> Guesser
+      <span class="number-pink">Number</span> Guesser
     </header>
 
-    <input class="user-number" id="userNumber" type="text" placeholder="Enter your guess">
-    <button class="user-submit">Guess</button>
+    <div class="user-input">
+      <input class="user-number" id="userNumber" type="text" placeholder="Enter your guess">
+    </div>
 
-    <button class="user-delete" id="clearButton" disabled="disabled" onclick="document.getElementById('userNumber').value = ''">Clear</button>
+    <div class="center-buttons">
+      <button class="user-submit">Guess</button>
+      <button class="user-delete" id="clearButton" disabled="disabled" onclick="document.getElementById('userNumber').value = ''">Clear</button>
+    </div>
 
     <div class="resultParas">
       <p class="last-guess"></p><br>
@@ -26,7 +30,9 @@
       <p class="hi-low"></p><br>
     </div>
 
-    <button class="resetButton" id="resetButton" disabled="disabled">Reset</button>
+    <div class="reset-container">
+      <button class="resetButton" id="resetButton" disabled="disabled">Reset</button>
+    </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="script.js"></script>

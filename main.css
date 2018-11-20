@@ -1,0 +1,101 @@
+html {
+  font-family: 'Open Sans', sans-serif;
+}
+
+header {
+  background-color: #404041;
+  color: #E6E7E8;
+  font-weight: 300;
+  text-align: center;
+  font-size: 60px;
+}
+
+.number-pink {
+  color: #ED458B;
+  font-weight: 700;
+}
+
+.user-input {
+  display: flex;
+  justify-content: center;
+}
+
+.user-number {
+  width: 50%;
+  margin-top: 50px;
+  height: 40px;
+}
+
+::-webkit-input-placeholder {
+  font-size: 35px;
+}
+
+.center-buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+button {
+  background-color: #929497;
+  color: #FFFFFF;
+  border-radius: 10px;
+  width: 14%;
+  height: 8%;
+  font-size: 15px;
+  font-weight: 300;
+  margin-right: 40px;
+  margin-left: 40px;
+}
+
+.user-submit {
+  background-color: #929497;
+  color: #FFFFFF;
+  border-radius
+}
+
+.user-delete {
+  background-color: #929497;
+  color: #FFFFFF;
+}
+
+.reset-container {
+  display: flex;
+  justify-content: center;
+}
+
+#resetButton {
+  width: 35%;
+}
+
+.resultParas {
+  text-align: center;
+  margin-top: 6%;
+  margin-bottom: 4%;
+}
+
+.message {
+  color: #EB008B;
+  font-size: 100px;
+  margin: 0px;
+}
+
+.last-guess {
+  font-size: 20px;
+  color: #404041;
+}
+
+.hi-low {
+  font-size: 20px;
+  color: #404041;
+}
+
+button:hover {
+  background-color: #EB008B;
+  color: #FFFFFF;
+}
+
+button:disabled {
+  background-color: #D0D2D3;
+  color: #FFFFFF;
+}
