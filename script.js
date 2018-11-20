@@ -1,8 +1,9 @@
-var randomNumber = Math.floor(Math.random() * 10) + 1;
+var randomNumber = Math.floor(Math.random() * 100) + 1;
 var resetButton = document.querySelector('#resetButton');
 var clearButton = document.querySelector('#clearButton');
 var min = 0;
-var max = 10;
+var max = 100;
+var win = false
 
 rangeButton.addEventListener('click', defineRange);
 
@@ -10,14 +11,14 @@ var minimumForm = document.querySelector('#minimumForm');
 var maximumForm = document.querySelector('#maximumForm');
 
 function defineRange() {
-  console.log('set')
   min = Number(minimumForm.value)
   max = Number(maximumForm.value)
 
   randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+  alert("The range is between " + min + " and " + max + ".");
 }
 
-$('.user-submit').on('click', function () {
+$('.userSubmit').on('click', function () {
   var guessNumber = Number(userNumber.value);
   document.getElementById('clearButton').disabled = false;
 
@@ -25,6 +26,7 @@ $('.user-submit').on('click', function () {
     $('.last-guess').text('');
     $('.message').text('BOOM!');
     $('.hi-low').text('');
+    gameOver();
   }
   else if (parseInt(guessNumber) > max || parseInt(guessNumber) < min) {
     alert(guessNumber + " is outside of the range, choose a number between " + min + " and " + max);
@@ -59,12 +61,20 @@ function resetGame() {
   }
 
   userNumber.value = '';
-  randomNumber = Math.floor(Math.random() * 10) + 1;
+  randomNumber = Math.floor(Math.random() * 100) + 1;
 }
 
 resetButton.addEventListener('click', allDisable);
 
 function allDisable() {
-    resetButton.disabled = true;
-    clearButton.disabled = true;
+  resetButton.disabled = true;
+  clearButton.disabled = true;
+}
+
+function gameOver() {
+  userNumber.disabled = true;
+  userSubmit.disabled = true;
+
+  resetButton.value = 'New Game - New Range';
+  win = true;
 }

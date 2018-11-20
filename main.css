@@ -20,7 +20,7 @@ header {
   justify-content: center;
 }
 
-.user-number {
+.userNumber {
   width: 50%;
   margin-top: 50px;
   height: 40px;
@@ -48,7 +48,7 @@ button {
   margin-left: 40px;
 }
 
-.user-submit {
+.userSubmit {
   background-color: #929497;
   color: #FFFFFF;
   border-radius
