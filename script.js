@@ -1,8 +1,21 @@
-var randomNumber = Math.floor(Math.random() * 100) + 1;
-var min = 1;
-var max = 100;
+var randomNumber = Math.floor(Math.random() * 10) + 1;
 var resetButton = document.querySelector('#resetButton');
 var clearButton = document.querySelector('#clearButton');
+var min = 0;
+var max = 10;
+
+rangeButton.addEventListener('click', defineRange);
+
+var minimumForm = document.querySelector('#minimumForm');
+var maximumForm = document.querySelector('#maximumForm');
+
+function defineRange() {
+  console.log('set')
+  min = Number(minimumForm.value)
+  max = Number(maximumForm.value)
+
+  randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+}
 
 $('.user-submit').on('click', function () {
   var guessNumber = Number(userNumber.value);
@@ -37,7 +50,6 @@ $('.user-submit').on('click', function () {
 });
 
 resetButton.addEventListener('click', resetGame);
-resetButton.addEventListener('click', allDisable);
 
 function resetGame() {
   var resetParas = document.querySelectorAll('.resultParas p');
@@ -47,17 +59,10 @@ function resetGame() {
   }
 
   userNumber.value = '';
-  randomNumber = Math.floor(Math.random() * 100) + 1;
+  randomNumber = Math.floor(Math.random() * 10) + 1;
 }
 
-// function disableButton() {
-//   if (document.getElementById("userNumber").value === "") {
-//     document.getElementById('clearButton').disabled = true;
-//   }
-//   else if (document.getElementById("userNumber").value !== "") {
-//     document.getElementById('clearButton').disabled = false;
-//   }
-// }
+resetButton.addEventListener('click', allDisable);
 
 function allDisable() {
     resetButton.disabled = true;
