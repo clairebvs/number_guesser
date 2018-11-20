@@ -62,6 +62,15 @@ function resetGame() {
 
   userNumber.value = '';
   randomNumber = Math.floor(Math.random() * 100) + 1;
+
+  if (win === true) {
+    min = min - 10;
+    max = max + 10;
+    minimumForm.value = min;
+    maximumForm.value = max;
+    defineRange();
+    win = false;
+  }
 }
 
 resetButton.addEventListener('click', allDisable);
@@ -72,8 +81,7 @@ function allDisable() {
 }
 
 function gameOver() {
-  userNumber.disabled = true;
-  userSubmit.disabled = true;
+  clearButton.disabled = true;
 
   resetButton.value = 'New Game - New Range';
   win = true;
